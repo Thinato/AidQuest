@@ -91,7 +91,7 @@ namespace AidQuest_Forms
             this.btnLeaderBoard.Name = "btnLeaderBoard";
             this.btnLeaderBoard.Size = new System.Drawing.Size(270, 41);
             this.btnLeaderBoard.TabIndex = 2;
-            this.btnLeaderBoard.Text = "Criar novas perguntas";
+            this.btnLeaderBoard.Text = "Melhores Jogadores";
             this.btnLeaderBoard.UseVisualStyleBackColor = false;
             this.btnLeaderBoard.Click += new System.EventHandler(this.btnLeaderBoard_Click);
             // 

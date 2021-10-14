@@ -32,6 +32,13 @@ namespace AidQuest_Forms
 
                 table.Columns.Add("Posição");
                 data.Fill(table);
+
+                if (table.Rows.Count < 1)
+                {
+                    MessageBox.Show("Nenhum Jogador encontrado!");
+                    return;
+                }
+
                 int j = 1;
                 foreach (DataRow row in table.Rows)
                 {

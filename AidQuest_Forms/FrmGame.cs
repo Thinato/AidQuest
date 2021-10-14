@@ -38,7 +38,7 @@ namespace AidQuest_Forms
             if (Time <= 0f)
             {
                 timer1.Stop();
-                MessageBox.Show("Tempo esgotado!\nSua pontuação foi: " + Points );
+                //MessageBox.Show("Tempo esgotado!\nSua pontuação foi: " + Points );
                 GameOver();
             }
             Time -= 0.1f;
@@ -68,8 +68,6 @@ namespace AidQuest_Forms
         }
         private void GameOver()
         {
-            
-
             pGameOver.Visible = true;
             pGameOver.Location = new Point((this.Width / 2) - (pGameOver.Width / 2), (this.Height / 2) - (pGameOver.Height / 2));
         }
@@ -125,6 +123,12 @@ namespace AidQuest_Forms
                 SQLiteDataAdapter data = new SQLiteDataAdapter(query, con.connection);
                 DataTable table = new DataTable();
                 data.Fill(table);
+                if (table.Rows.Count < 1)
+                {
+                    MessageBox.Show("Nenhuma pergunta encontrada");
+                    this.Close();
+                    return;
+                }
                 int qID = rand.Next(table.Rows.Count);
                 lblQuestion.Text = table.Rows[qID][1].ToString();
 
